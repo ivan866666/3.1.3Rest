@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8"/>
+  <title>Update users</title>
+</head>
+<body>
+<style>
+  table {
+    border: 1px solid #69c;
+  }
+  th {
+    font-weight: normal;
+    color: #039;
+    padding: 10px;
+  }
+  td {
+    color: #669;
+    border-top: 1px dashed white;
+    padding: 10px;
+    background:#ccddff;
+  }
+  tr:hover td {
+    background: #99bcff;
+  }</style>
+<form action="#" th:action="@{/user/user-update}" th:object="${user}" method="post">
+  <label for="id">ID</label>
+  <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+  <br/>
+  <label for="username">User name</label>
+  <input type="text" th:field="*{username}" id="username" placeholder="username">
+  <br/>
+  <br>
+  <label for="surname">surname: </label>
+  <input type="text" th:field="*{surname}" id="surname">
+  <br>
+  <label for="age">age: </label>
+  <input type="text" th:field="*{age}" id="age">
+  <br>
+  <label for="password">Password</label>
+  <input type="password" th:field="*{password}" id="password" placeholder="password">
+  <br/>
+  <input type="submit" value="Update">
+</form>
+</body>
+</html>
